@@ -7,19 +7,49 @@ media_folder: static/media
 public_folder: /media
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
-    create: true
-    slug: "index"
-    media_folder: "media"
-    public_folder: "media"
-    path: "{{title}}/index"
-    editor:
-      preview: false
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Cover", name: "cover", widget: "image" }
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    media_folder: "static/media"
+    public_folder: "static/media"
+    files:
+      - label: "Page"
+        name: "apage"
+        file: "content/pages/apage.md"
+        fields:
+          - {
+              label: "Page Title",
+              name: "pagetitle",
+              widget: "string",
+              default: "Shalom Christian Embassy",
+            }
+          - {
+              label: "Caption",
+              name: "caption",
+              widget: "string",
+              default: "Our Caption is: WORK HARD PLAY HARD",
+            }
+          - { label: "Cover Image", name: "image", widget: "image" }
+      - label: "Second Page"
+        name: "spage"
+        file: "content/pages/spage.md"
+        fields:
+          - {
+              label: "Page Title",
+              name: "pagetitle",
+              widget: "string",
+              default: "Events",
+            }
+          - {
+              label: "Caption",
+              name: "caption",
+              widget: "string",
+              default: "Upcoming church events",
+            }
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Cover", name: "cover", widget: "image" }
+              - { label: "Description", name: "desc", widget: "text" }
