@@ -8,12 +8,8 @@ import { graphql } from "gatsby";
 
 // markup
 const IndexPage = ({ data }) => {
-  let cover =
-    data.file.childMarkdownRemark.frontmatter.events[0].cover.childImageSharp
-      .gatsbyImageData;
-  cover = getImage(cover);
   let events = data.file.childMarkdownRemark.frontmatter.events;
-  console.log();
+
   return (
     <main style={{ margin: "auto", maxWidth: "60%" }}>
       <title>Home Page</title>
@@ -22,7 +18,7 @@ const IndexPage = ({ data }) => {
         <h3>Events</h3>
         <ul>
           {events.map((e, i) => {
-            cover = getImage(e.cover.childImageSharp.gatsbyImageData);
+            const cover = getImage(e.cover.childImageSharp.gatsbyImageData);
             return (
               <li style={{ border: "1px dotted blue" }} key={i}>
                 <h5>{e.name}</h5>
