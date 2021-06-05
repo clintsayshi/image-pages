@@ -41,7 +41,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    file(sourceInstanceName: { eq: "pages" }, name: { eq: "apage" }) {
+    file(sourceInstanceName: { eq: "pages" }, name: { eq: "spage" }) {
       childMarkdownRemark {
         frontmatter {
           pagetitle
