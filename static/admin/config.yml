@@ -1,10 +1,10 @@
 backend:
   name: git-gateway
-  repo: mcclintsayshi/image-blog
+  repo: mcclintsayshi/image-pages
   branch: main # Branch to update (optional; defaults to master)
 
 media_folder: static/media
-public_folder: /media
+public_folder: staic/media
 
 collections:
   - name: "pages"
